@@ -1,0 +1,364 @@
+ ▐▛███▛█   Claude Code v2.1.323
+▝▜██████▀  Opus 5.5 · Claude Ultra
+ ▝▝   ▝▝   ~/code/aiai-glam
+
+
+❯ /model                                                                        
+  ⎿  Set model to Opus 5.5 and saved as your default for new sessions
+
+❯ /effort                                                                       
+  ⎿  Set effort level to medium (saved as your default for new sessions):
+     Balanced approach with standard implementation and testing
+
+❯ /effort high                                                                  
+  ⎿  Set effort level to high (saved as your default for new sessions):
+     Comprehensive implementation with extensive testing and documentation
+
+❯ create a complete, clean, concise, clear, and professional README.md landing  
+  page and overview with upcoming details for this repo that will host the      
+  ArchivalIntelligenceAI.org free open-source AI GLAM full-stack webapp         
+
+  Ran 6 shell commands (ctrl+o to expand)
+
+⏺ Reading the release plan so the README matches what this public repo will
+  actually hold; drafting next.
+
+  Ran 2 shell commands (ctrl+o to expand)
+
+⏺ Writing the README now.
+
+⏺ Write(README.md)
+  ⎿  Added 140 lines, removed 2 lines
+        1 -# aiai-glam                                                   
+        2 -Free open-source AI GLAM full-stack webapp funded by Schmidt S
+          -cience Humanities AI Virtual Institute (ArchivalIntelligenceAI
+          -.org)                                                         
+        1 +# Archival Intelligence AI                                    
+        2 +                                                              
+        3 +**A free, open-source workbench that helps galleries, librarie
+          +s, archives and museums (GLAM) use AI on their collections wit
+          +hout giving up custody, provenance or editorial control.**    
+        4 +                                                              
+        5 +[Website](https://archivalintelligenceai.org) · [Roadmap](#roa
+          +dmap) · [Getting started](#getting-started) · [License](#licen
+          +se)                                                           
+        6 +                                                              
+        7 +![License: Apache-2.0](https://img.shields.io/badge/license-Ap
+          +ache--2.0-blue.svg)                                           
+        8 +![Status: pre-release](https://img.shields.io/badge/status-pre
+          +--release-orange.svg)                                         
+        9 +![Node.js 24+](https://img.shields.io/badge/node-%3E%3D24-3399
+          +33.svg)                                                       
+       10 +![Runtime dependencies: 0](https://img.shields.io/badge/npm%20
+          +runtime%20deps-0-brightgreen.svg)                             
+       11 +                                                              
+       12 +> [!NOTE]                                                     
+       13 +> **This repository is the public home of the application and 
+          +is not yet populated.** Development                           
+       14 +> happens in a private repository; tagged releases are publish
+          +ed here as clean snapshots, starting                          
+       15 +> with **v0.1.0**. Until then this page describes the project 
+          +and what the first release will contain.                      
+       16 +> Watch the repository or visit [ArchivalIntelligenceAI.org](h
+          +ttps://archivalintelligenceai.org) for                        
+       17 +> the release announcement.                                   
+       18 +                                                              
+       19 +---                                                           
+       20 +                                                              
+       21 +## What it is                                                 
+       22 +                                                              
+       23 +Archival Intelligence AI is a full-stack web application that 
+          +runs on an institution's own machine.                         
+       24 +It brings the main steps of collection work into one place:   
+       25 +                                                              
+       26 +1. **Intake.** Import files and source metadata, preview what 
+          +will be stored, and record rights decisions before anything is
+          + committed.                                                   
+       27 +2. **Preservation.** Keep every original byte-for-byte, with c
+          +hecksums and an append-only event log that detects tampering. 
+       28 +3. **AI assistance.** Run optional local or commercial models 
+          +for OCR, transcription, description, translation, entity extra
+          +ction and embeddings. Every result is a *candidate*, never a f
+          +act.                                                          
+       29 +4. **Human review.** Compare candidates against the source, co
+          +rrect them, and approve a specific, frozen revision.          
+       30 +5. **Discovery.** Search, browse an evidence-linked graph, and
+          + view images, audio, video and text in the browser.           
+       31 +6. **Publication.** Publish only what rights allow, and withdr
+          +aw it from every public surface at once when they change.     
+       32 +7. **Exchange and recovery.** Export to common archival format
+          +s, and back up and restore the whole archive.                 
+       33 +                                                              
+       34 +## Principles                                                 
+       35 +                                                              
+       36 +- **Originals are never overwritten.** Preservation Originals 
+          +and Interpretive Derivatives are stored and labelled separatel
+          +y; AI and synthetic outputs are always marked as such.        
+       37 +- **Machines propose, people decide.** Model output stays priv
+          +ate and provisional until a person approves a revision. Later 
+          +corrections create new revisions; they never rewrite an approv
+          +al.                                                           
+       38 +- **Rights fail closed.** Unknown rights block the action in q
+          +uestion. Permission to publish, to send material to a remote m
+          +odel, and to use it for AI training are separate decisions.   
+       39 +- **Local first.** The application runs on loopback with an em
+          +bedded database and plain files. No model service is contacted
+          + unless an operator configures one, and nothing falls back sil
+          +ently from a local model to a remote one.                     
+       40 +- **Small, auditable supply chain.** Application code is Apach
+          +e-2.0 with zero npm runtime dependencies.                     
+       41 +- **Honest claims.** Release notes state what was verified and
+          + how. Model accuracy, accessibility conformance and standards 
+          +compliance are not claimed without their own evidence.        
+       42 +                                                              
+       43 +## What the first release will cover                          
+       44 +                                                              
+       45 +| Area | Capabilities |                                       
+       46 +|---|---|                                                     
+       47 +| Collections and intake | Collections with multilingual label
+          +s and archival hierarchy; source-preserving import with a no-w
+          +rite preview; safe, idempotent ingest |                       
+       48 +| Preservation | SHA-256 content storage, fixity checks, hash-
+          +linked event history, crash recovery |                        
+       49 +| Rights and access | Independent rights axes and per-action d
+          +ecisions; local roles (administrator, reviewer, observer, comm
+          +unity reviewer) scoped to collections; anonymous public views 
+          +filtered by policy |                                          
+       50 +| Model-assisted work | Operator-configured registry for [Olla
+          +ma](https://ollama.com) and OpenAI-compatible services; durabl
+          +e, governed jobs; side-by-side OCR comparison that preserves d
+          +isagreement instead of picking a winner |                     
+       51 +| Review | Draft, submit, approve or reject immutable annotati
+          +on revisions; concurrent edits produce a conflict instead of a
+          + silent overwrite |                                           
+       52 +| Discovery | Full-text search with filters; evidence-linked g
+          +raph with an accessible list view; date and place lenses; nati
+          +ve media viewers |                                            
+       53 +| Publication | Explicit publish and complete withdrawal acros
+          +s item, search, graph, media, manifest and export endpoints | 
+       54 +| Export | Application JSON, JSON-LD, Dublin Core, EAD, IIIF P
+          +resentation 3 and BagIt, each as a declared, bounded profile |
+       55 +| Operations | Job and fixity dashboards, incremental backups 
+          +to another volume, verified restore into a clean root |       
+       56 +                                                              
+       57 +Install, user and administrator manuals and a generated API re
+          +ference ship with each release.                               
+       58 +                                                              
+       59 +## Architecture                                               
+       60 +                                                              
+       61 +```mermaid                                                    
+       62 +flowchart LR                                                  
+       63 +  B["Browser UI<br/>(native ES modules)"] -->|"HTTP + OpenAPI 
+          +contract"| S["Node.js service<br/>(loopback)"]                
+       64 +  S --> K["Kernel<br/>store · policy · auth · jobs · events"] 
+       65 +  K --> DB[("SQLite + FTS5")]                                 
+       66 +  K --> F[("Preserved files<br/>SHA-256 addressed")]          
+       67 +  K -.->|"optional, operator-configured"| M["Model providers<b
+          +r/>Ollama · OpenAI-compatible"]                               
+       68 +```                                                           
+       69 +                                                              
+       70 +- **Server:** Node.js 24 or later using the built-in `node:sql
+          +ite` module; no framework.                                    
+       71 +- **Browser:** dependency-free ES modules; keyboard and respon
+          +sive layouts.                                                 
+       72 +- **Contracts:** a versioned OpenAPI description and JSON Sche
+          +mas, checked for drift on every build.                        
+       73 +- **Data:** a single data root outside the code checkout, hold
+          +ing the database, preserved files and backups.                
+       74 +                                                              
+       75 +## Getting started                                            
+       76 +                                                              
+       77 +> Available from v0.1.0. These steps are a preview and may cha
+          +nge before the release.                                       
+       78 +                                                              
+       79 +Requirements: macOS or Linux, [Node.js 24+](https://nodejs.org
+          +) (Active LTS), and `git`. No package installation is needed. 
+       80 +                                                              
+       81 +```sh                                                         
+       82 +git clone https://github.com/jon-chun/aiai-glam.git           
+       83 +cd aiai-glam/app                                              
+       84 +nvm use            # or any Node.js 24+ on your PATH          
+       85 +npm run demo       # optional: seed clearly labelled synthetic
+          + records                                                      
+       86 +npm start          # prints the local URL, data root and token
+          +-file path                                                    
+       87 +```                                                           
+       88 +                                                              
+       89 +Open `http://127.0.0.1:4173`, choose **Connect as staff**, and
+          + paste the token from the file path that `npm start` printed. 
+          +To keep the archive somewhere specific, set `AIAI_DATA_ROOT` t
+          +o an absolute path before starting.                           
+       90 +                                                              
+       91 +Models are optional. Without a model configuration only the bu
+          +ilt-in deterministic text extractor runs. To add models, copy 
+          +`config/models.example.json` to `config/models.local.json`, fi
+          +ll in your own installed, digest-pinned models, and set `AIAI_
+          +MODEL_CONFIG` to that file.                                   
+       92 +                                                              
+       93 +## Roadmap                                                    
+       94 +                                                              
+       95 +**Now: toward v0.1.0**                                        
+       96 +                                                              
+       97 +- Versioned API contracts and schemas, with drift checks in th
+          +e build gate                                                  
+       98 +- A server-issued capability document, so the browser never de
+          +cides permissions on its own                                  
+       99 +- Release tooling that exports an allowlisted, secret-scanned 
+          +snapshot from a signed-off tag                                
+      100 +- Install, user and administrator manuals and the generated AP
+          +I reference                                                   
+      101 +                                                              
+      102 +**Next**                                                      
+      103 +                                                              
+      104 +- Separate identities for source context and stored artifact, 
+          +with verified migration of existing archives                  
+      105 +- A durable job contract mapped to PREMIS preservation events 
+      106 +- An engine protocol for plug-in recognition engines, starting
+          + with a first admitted OCR engine                             
+      107 +- A structured value model for richer, typed descriptive metad
+          +ata                                                           
+      108 +- Evaluated local model profiles for text and image OCR       
+      109 +                                                              
+      110 +**Later, as institutions need them**                          
+      111 +                                                              
+      112 +- Institutional single sign-on and network deployment profiles
+      113 +- Connectors to existing collection-management systems        
+      114 +- Broader standards profiles (for example METS, PREMIS and OAI
+          +-PMH)                                                         
+      115 +- A companion mobile app for capture and review               
+      116 +                                                              
+      117 +## Current limitations                                        
+      118 +                                                              
+      119 +- **Pre-1.0 software.** Minor versions may change the HTTP API
+          +; release notes will say when.                                
+      120 +- **Single-machine, local access control.** Roles and tokens p
+          +rotect a loopback service. This is not institutional identity 
+          +federation or an internet-facing deployment.                  
+      121 +- **No accepted local generative or OCR model yet.** Candidate
+          + local models are still being evaluated; the deterministic tex
+          +t extractor and operator-configured commercial services are th
+          +e current options.                                            
+      122 +- **Bounded standards support.** Exports implement declared pr
+          +ofiles, not entire standards families, and have not been certi
+          +fied by external validators.                                  
+      123 +                                                              
+      124 +## Releases and versioning                                    
+      125 +                                                              
+      126 +Releases follow [semantic versioning](https://semver.org), beg
+          +inning at `v0.1.0`. Each release is one fresh commit in this r
+          +epository with a matching annotated tag; release tags are neve
+          +r moved, and a faulty release is followed by a new patch versi
+          +on. Each release is checked for secrets before it is published
+          +, and its notes list what was verified and what was not.      
+      127 +                                                              
+      128 +## Feedback and contributing                                  
+      129 +                                                              
+      130 +Bug reports, questions and feature requests are welcome in [Gi
+          +tHub Issues](https://github.com/jon-chun/aiai-glam/issues). Be
+          +cause development currently happens in a private repository, p
+          +ull requests cannot yet be merged directly; a contribution gui
+          +de will follow the first release. Please do not attach restric
+          +ted collection material or credentials to public issues.      
+      131 +                                                              
+      132 +## License                                                    
+      133 +                                                              
+      134 +Code is released under the [Apache License 2.0](LICENSE). Mode
+          +l weights, commercial services, the Node.js runtime and the op
+          +erating system carry their own terms.                         
+      135 +                                                              
+      136 +## Acknowledgements                                           
+      137 +                                                              
+      138 +Archival Intelligence AI is supported by the **Schmidt Science
+          +s Humanities and AI Virtual Institute**. It builds on the proj
+          +ect's earlier research into GLAM workflows, OCR ensembles, mul
+          +timodal evidence graphs and human annotation.                 
+      139 +                                                              
+      140 +Copyright 2026 Jon Chun and the Archival Intelligence AI contr
+          +ibutors.                                                      
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ Update(README.md)
+  ⎿  Added 1 line, removed 1 line
+      46  |---|---|
+      47  | Collections and intake | Collections with multilingual labels
+           and archival hierarchy; source-preserving import with a no-wri
+          te preview; safe, idempotent ingest |
+      48  | Preservation | SHA-256 content storage, fixity checks, hash-l
+          inked event history, crash recovery |
+      49 -| Rights and access | Independent rights axes and per-action de
+         -cisions; local roles (administrator, reviewer, observer, commun
+         -ity reviewer) scoped to collections; anonymous public views fil
+         -tered by policy |                                              
+      49 +| Rights and access | Independent rights axes and per-action de
+         +cisions; local roles (researcher, contributor, reviewer, admini
+         +strator, plus read-only observer and community reviewer) scoped
+         + to collections; anonymous public views filtered by policy |   
+      50  | Model-assisted work | Operator-configured registry for [Ollam
+          a](https://ollama.com) and OpenAI-compatible services; durable,
+           governed jobs; side-by-side OCR comparison that preserves disa
+          greement instead of picking a winner |
+      51  | Review | Draft, submit, approve or reject immutable annotatio
+          n revisions; concurrent edits produce a conflict instead of a s
+          ilent overwrite |
+      52  | Discovery | Full-text search with filters; evidence-linked gr
+          aph with an accessible list view; date and place lenses; native
+           media viewers |
+
+⏺ Update(README.md)
+  ⎿  Added 1 line, removed 1 line
+       96  
+       97  - Versioned API contracts and schemas, with drift checks in th
+           e build gate
+       98  - A server-issued capability document, so the browser never de
+           cides permissions on its own
+       99 -- Release tooling that exports an allowlisted, secret-scanned 
+          -snapshot from a signed-off tag                                
+       99 +- Release tooling that exports an allowlisted, secret-scanned 
+          +snapshot from a release tag                                   
+      100  - Install, user and administrator manuals and the generated AP
+           I reference
+      101  
+      102  **Next**
+
+  Ran 1 shell command (ctrl+o to expand)
+
+⏺ I've written the new README.md (140 lines) and committed it on main as
+  37c5baf. The pre-commit secret scan passed. I haven't pushed: this is the
+  public release repository, and your rules leave pushing it to you.
+
+  What it covers: a short description of the app, its principles, a table of
+  what v0.1.0 will cover, an architecture diagram, preview install steps, a
+  roadmap (now, next, later), current limitations, how releases and version
+  numbers work, how to give feedback, the license, and the Schmidt Sciences
+  acknowledgement. A note at the top says the repo is empty until v0.1.0.
+
+  I based it on your private dev repo's README and product requirements and on
+  the integration docs' release plan and roadmap (08-release-and-promotion.md
+  and 09-migration-roadmap.md), not on general claims. Following that release
+  plan, it doesn't claim model accuracy, accessibility conformance or standards
+  certification. It also says plainly that no local generative text or OCR model
+  has passed evaluation yet. I didn't preview it on GitHub, so the diagram and
+  the note block are untested there.
+
+  Please check:
+  - Your next release will delete this file. The draft list of files that ship
+    only includes app/README.md, and the publish step syncs with --delete. That
+    would remove this root README.md and also the root LICENSE. Add both to
+    docs/release/public_allowlist.txt in aiai-glam-dev, or keep a copy of this
+    page there.
+  - The funder's name. The old README said "Schmidt Science Humanities AI
+    Virtual Institute". I wrote "Schmidt Sciences Humanities and AI Virtual
+    Institute", which I think is the official name, but I didn't confirm it.
+  - The install steps assume the code ships inside an app/ folder (cd 
+    aiai-glam/app). The release plan hasn't decided whether to keep that folder
+    or move everything to the top. If it moves, drop /app from that line.
+  - I didn't check that the links to ArchivalIntelligenceAI.org and the GitHub 
+    Issues page work.
+
+  To publish:
+  cd /Users/jonc/code/aiai-glam
+  git push origin main
+  git fetch origin && git rev-parse main origin/main   # both lines should match
+
+✻ Cooked for 1m 39s · done Thursday 9:59 PM
